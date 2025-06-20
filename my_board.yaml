@@ -43,7 +43,7 @@ points:
                 spread: 1kx
             anchor:
                 ref: matrix_inner_mod
-                shift: [2, -2]
+                shift: [2,-2]
             columns:
                 layer:
                     key:
@@ -52,9 +52,61 @@ points:
                     key:
                         width: 1.5kx
                         splay: 75
-                        shift: [2,-2]
+                        shift: [2,-3.25]
             rows:
                 cluster:
     mirror: &mirror
         ref: matrix_bracket_top
         distance: 2.5kx
+outlines:
+    raw:
+      - what: rectangle
+        where: true
+        bound: true
+        size: [px, py]
+        fillet: 2
+    keys:
+      - what: rectangle
+        where: true
+        bound: false
+        size: [kx-0.5,ky-0.5]
+    board:
+      - what: polygon
+        operation: stack
+        fillet: 2
+        points:
+          - ref: matrix_outer_top
+            shift: [0,0]
+          - ref: matrix_ring_top
+            shift: [0,0]
+          - ref: matrix_middle_top
+            shift: [0,0]
+          - ref: matrix_inner_top
+            shift: [0,0]
+          - ref: matrix_bracket_bottom
+            shift: [0,0]
+          - ref: mirror_matrix_inner_top
+            shift: [0,0]
+          - ref: mirror_matrix_middle_top
+            shift: [0,0]
+          - ref: mirror_matrix_ring_top
+            shift: [0,0]
+          - ref: mirror_matrix_outer_top
+            shift: [0,0]
+          - ref: mirror_matrix_outer_bottom
+            shift: [0,0]
+          - ref: mirror_matrix_ring_mod
+            shift: [0,0]
+          - ref: mirror_thumbs_enter_cluster
+            shift: [0,0]
+          - ref: thumbs_enter_cluster
+            shift: [0,0]
+          - ref: matrix_ring_mod
+            shift: [0,0]
+          - ref: matrix_outer_bottom
+            shift: [0,0]
+
+
+                
+                
+
