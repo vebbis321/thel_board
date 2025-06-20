@@ -1,0 +1,60 @@
+units:
+  # proxy spacing variables
+  kx: cx
+  ky: cy
+  # padding variables
+  px: kx + 2
+  py: ky + 2
+
+points:
+    zones:
+        matrix:
+            key:
+                padding: 1ky
+                spread: 1kx
+            columns:
+                outer: 
+                    rows.mod.skip: true
+                pinky:
+                    rows.mod.skip: true
+                ring:
+                    key.stagger: 5
+                    rows.mod.skip: true
+                middle:
+                    key.stagger: 2.5
+                index:
+                    key.stagger: -2.5
+                inner:
+                    key.stagger: -2.5
+                    rows.mod.skip: true
+                bracket:
+                    rows.mod.skip: true
+                    rows.home.skip: true
+                    rows.top.skip: true
+
+            rows:
+                mod:
+                bottom:
+                home:
+                top:
+        thumbs:
+            key:
+                padding: 1ky
+                spread: 1kx
+            anchor:
+                ref: matrix_inner_mod
+                shift: [2, -2]
+            columns:
+                layer:
+                    key:
+                        splay: -15
+                enter:
+                    key:
+                        width: 1.5kx
+                        splay: 75
+                        shift: [2,-2]
+            rows:
+                cluster:
+    mirror: &mirror
+        ref: matrix_bracket_top
+        distance: 2.5kx
