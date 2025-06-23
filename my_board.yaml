@@ -3,8 +3,8 @@ units:
   kx: cx
   ky: cy
   # padding variables
-  px: kx + 2
-  py: ky + 2
+  px: kx + 4
+  py: ky + 4
 
 points:
     zones:
@@ -55,9 +55,6 @@ points:
                         shift: [2,-3.25]
             rows:
                 cluster:
-    mirror: &mirror
-        ref: matrix_bracket_top
-        distance: 2.5kx
 outlines:
     raw:
       - what: rectangle
@@ -70,42 +67,33 @@ outlines:
         where: true
         bound: false
         size: [kx-0.5,ky-0.5]
-    board:
+    boardLeft:
       - what: polygon
         operation: stack
         fillet: 2
         points:
-          - ref: matrix_outer_top
-            shift: [0,0]
-          - ref: matrix_ring_top
-            shift: [0,0]
-          - ref: matrix_middle_top
-            shift: [0,0]
-          - ref: matrix_inner_top
-            shift: [0,0]
-          - ref: matrix_bracket_bottom
-            shift: [0,0]
-          - ref: mirror_matrix_inner_top
-            shift: [0,0]
-          - ref: mirror_matrix_middle_top
-            shift: [0,0]
-          - ref: mirror_matrix_ring_top
-            shift: [0,0]
-          - ref: mirror_matrix_outer_top
-            shift: [0,0]
-          - ref: mirror_matrix_outer_bottom
-            shift: [0,0]
-          - ref: mirror_matrix_ring_mod
-            shift: [0,0]
-          - ref: mirror_thumbs_enter_cluster
-            shift: [0,0]
           - ref: thumbs_enter_cluster
-            shift: [0,0]
-          - ref: matrix_ring_mod
-            shift: [0,0]
+            shift: [-0.5px,-0.75py]
+          - ref: thumbs_layer_cluster
+            shift: [-0.5px,-0.5py]
+          - ref: matrix_index_mod
+            shift: [-0.5px,-0.5py]
           - ref: matrix_outer_bottom
-            shift: [0,0]
-
+            shift: [-0.5px,-0.5py]
+          - ref: matrix_outer_top
+            shift: [-0.5px,0.5py]
+          - ref: matrix_ring_top
+            shift: [-0.5px,0.5py]
+          - ref: matrix_middle_top
+            shift: [0.5px,0.5py]
+          - ref: matrix_inner_top
+            shift: [2px,0.5py]
+          - ref: matrix_bracket_bottom
+            shift: [1.15px,0.25py]
+    combo:
+      - name: boardLeft
+      - operation: subtract
+        name: keys
 
                 
                 
